@@ -8,9 +8,16 @@ tailwind.config = {
 				card: '#BDCDD6',
 				background: '#EEE9DA',
 			},
+			spacing: {
+				
+			},
 		},
 	},
 	daisyui: {
 		themes: false, //['light'],
 	},
 };
+module.exports = {
+	//...
+	plugins: [require("daisyui")],
+  }
