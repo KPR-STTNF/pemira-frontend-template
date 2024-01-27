@@ -19,8 +19,10 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="js/tailwind.config.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
+		<html data-theme="cupcake"></html>
 		<div class="container-full">
 			<!-- navbar -->
 			<nav class="fixed top-0 w-full bg-white shadow-md">
@@ -40,9 +42,22 @@
 			</nav>
 			<!-- hero -->
 			<section class="p-12 mb-12 bg-secondary mt-20">
+				<div class="text-center xl:w-8/12 md:w-full xs:block mx-auto h-screen flex items-center justify-center">
+					<div class="mx-8 my-auto">
+						<h2 class="text-white text-5xl font-bold mb-6">SELAMAT DATANG DI PEMIRA 2024</h2>
+						<p class="text-white text-lg w-sm mb-10 w-lg">
+							PEMIRA merupakan pesta demokrasi tahunan STT Terpadu Nurul Fikri untuk memilih dan
+							menentukan: Presma (Presiden Mahasiswa) - Wapresma (Wakil Presiden Mahasiswa) dan Anggota
+							DPM (Dewan Perwakilan Mahasiswa).
+						</p>
+						<a href="" class="bg-white text-secondary p-5 rounded-lg"> Lihat Kandidat </a>
+					</div>
+				</div>
+			</section>
+			<!-- <section class="p-12 mb-12 bg-secondary mt-20">
 				<div class="flex justify-between xl:w-8/12 md:w-full xs:block mx-auto place-items-center items-center">
 					<div class="mx-8">
-						<img src="img/logo.png" alt="" width="1000" />
+						<img src="img/logo.png" alt="logo" />
 					</div>
 					<div class="mx-8">
 						<h2 class="text-white text-5xl font-bold mb-6">SELAMAT DATANG DI PEMIRA 2024</h2>
@@ -54,7 +69,7 @@
 						<a href="" class="bg-white text-secondary p-5 rounded-lg"> Lihat Kandidat </a>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<!-- langkah voting -->
 			<section class="m-7">
 				<div>
@@ -88,9 +103,57 @@
 			</section>
 			<!-- Calon Kandidat -->
 			<section class="m-7">
-				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Calon Kandidat</h2>
-				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Presma dan Wapresma</h2>
-				<div></div>
+				<h2 class="text-secondary text-4xl font-bold my-12 text-center">Calon Kandidat</h2>
+				<h2 class="text-secondary text-3xl font-bold mb-6 text-center">Presma dan Wapresma</h2>
+				<div class="text-center bg-background w-fit mx-auto p-4 rounded-xl shadow-lg pb-8">
+					<h1 class="my-1 text-3xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl">
+						01
+					</h1>
+					<div class="flex mb-6 justify-center">
+						<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
+							<!-- <a href="#"> -->
+							<!-- <h1
+                                    class="rounded-full bg-secondary text-2xl max-w-fit text-background p-2 mb-3 mx-auto font-bold"
+                                >
+                                    1
+                                </h1> -->
+							<img src="img/candidate/paslon1.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
+							<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
+							<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1>
+							<!-- </a> -->
+							<!-- modal -->
+							<dialog id="my_modal_3" class="modal">
+								<div class="modal-box">
+									<form method="dialog">
+										<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+											✕
+										</button>
+									</form>
+									<h3 class="font-bold text-lg mb-4">Apakah Kamu sudah yakin ?</h3>
+									<p class="py-4">Visi</p>
+									<p class="pb-4">Menjadikan lorem</p>
+									<p class="py-4">Misi</p>
+									<p class="pb-4">Menjadikan lorem</p>
+									<div class="modal-action">
+										<a class="btn bg-green-500 text-secondary" href="login.html">Ya, Vote !</a>
+									</div>
+								</div>
+							</dialog>
+							<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+						</div>
+						<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
+							<!-- <a href=""> -->
+							<img src="img/candidate/paslon2.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
+							<h1 class="mt-6 mb-1 text-3xl text-secondary">Ubay</h1>
+							<h1 class="text-lg text-secondary">(Calon Wakil Presiden Mahasiswa)</h1>
+							<!-- </a> -->
+							<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+						</div>
+					</div>
+					<a href="#" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()"
+						>Visi dan Misi</a
+					>
+				</div>
 			</section>
 			<!-- Live Count -->
 			<section>
@@ -99,9 +162,26 @@
 			<!-- syarat dan ketentuan -->
 			<section>
 				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Syarat dan Ketentuan</h2>
+				<!-- <div class="mx-auto mb-4">
+					<div class="row flex">
+						<div class="col-xl-6">
+							<img src="img/illustration/vote.svg" alt="" width="320" />
+						</div>
+						<div class="col-xl-6">
+							<p>
+								1. "Cahaya Cantik yang Mencerahkan: Produk Kecantikan Halal untuk Wanita Berkarakter"<br />
+								2. "Pesona Muslimah: Temukan Keanggunanmu dengan Produk Kecantikan Berbahan Alami"
+								"Kajian<br />
+								3. Muslimah Sehat: Keindahan Kulit dan Hati dengan Produk Ramah Islam" "Berkilau
+								dalam<br />
+								4. Keimanan, Bersinar dalam Kecantikan: Produk Halal yang<br />
+							</p>
+						</div>
+					</div>
+				</div> -->
 			</section>
 			<!-- contact -->
-			<section>
+			<!-- <section>
 				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Hubungi Kami</h2>
 				<div class="text-center grid gap-3 grid-cols-3 mb-6">
 					<div class="mx-auto">
@@ -120,10 +200,10 @@
 						</h1>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<!-- footer -->
-			<footer class="mb-8">
-				<hr class="border-t-2 border-secondary" />
+			<footer class="mb-8 b-0">
+				<!-- <hr class="border-t-1 border-secondary" /> -->
 				<h2 class="mt-6 text-center text-secondary">
 					Created with <i class="fas fa-heart text-red-400"></i> + <i class="fas fa-coffee"></i> by
 					<a href="" class="underline"> Web Dev KPR 2024</a>
