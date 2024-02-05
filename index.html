@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="scroll-behavior: smooth;">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,41 +10,130 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
-			integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="js/tailwind.config.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 	</head>
-	<body>
+	<body style="background-image: url('/img/decor/large-triangles-white.svg')">
 		<html data-theme="cupcake"></html>
+		<div data-aos="fade-down"></div>
 		<div class="container-full">
 			<!-- navbar -->
-			<nav class="fixed top-0 w-full bg-white shadow-md">
+			<!-- <nav class="fixed top-0 w-full bg-white shadow-md">
 				<div class="flex justify-between items-center container mx-auto">
 					<div class="mx-6">
 						<img src="img/logo.png" alt="" width="90" />
 					</div>
 					<div class="mx-6 align-center">
 						<ul class="flex">
-							<li class="mx-3"><a href="" class="text-xl text-secondary">Home</a></li>
-							<li class="mx-3"><a href="" class="text-xl text-secondary">Kandidat</a></li>
-							<li class="mx-3"><a href="" class="text-xl text-secondary">Live Count</a></li>
-							<li class="mx-3"><a href="" class="text-xl text-secondary">Saran</a></li>
+							<li class="mx-3">
+								<a href="" class="text-xl text-secondary hover:underline transition delay-100">Home</a>
+							</li>
+							<li class="mx-3">
+								<a href="" class="text-xl text-secondary hover:underline transition delay-100"
+									>Kandidat</a
+								>
+							</li>
+							<li class="mx-3">
+								<a href="" class="text-xl text-secondary hover:underline transition delay-100"
+									>Live Count</a
+								>
+							</li>
+							<li class="mx-3">
+								<a href="" class="text-xl hover:underline transition delay-100">Siap Vote</a>
+							</li>
 						</ul>
 					</div>
 				</div>
-			</nav>
+			</nav> -->
+			<div class="navbar bg-base-100 fixed top-0 w-full">
+				<div class="navbar-start">
+					<div class="dropdown">
+						<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-5 w-5"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h8m-8 6h16"
+								/>
+							</svg>
+						</div>
+						<ul
+							tabindex="0"
+							class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+						>
+							<li>
+								<a href="#langkah" class="text-xl text-secondary hover:underline transition delay-100"
+									>Tutorial</a
+								>
+							</li>
+							<li>
+								<a href="#kandidat" class="text-xl text-secondary hover:underline transition delay-100"
+									>Kandidat</a
+								>
+							</li>
+							<li>
+								<a
+									href="#live_count"
+									class="text-xl text-secondary hover:underline transition delay-100"
+									>Live Count
+								</a>
+							</li>
+							<li>
+								<a
+									href="#siap_vote"
+									class="text-xl hover:underline transition delay-100 bg-primary font-bold"
+									>Siap Vote</a
+								>
+							</li>
+						</ul>
+					</div>
+					<img src="img/logo.png" alt="" class="w-20" />
+				</div>
+				<div class="navbar-end hidden lg:flex">
+					<ul class="menu menu-horizontal px-1">
+						<li>
+							<a href="#langkah" class="text-xl text-secondary hover:underline transition delay-100"
+								>Tutorial</a
+							>
+						</li>
+						<li>
+							<a href="#kandidat" class="text-xl text-secondary hover:underline transition delay-100"
+								>Kandidat</a
+							>
+						</li>
+						<li>
+							<a href="#live_count" class="text-xl text-secondary hover:underline transition delay-100"
+								>Live Count
+							</a>
+						</li>
+						<li>
+							<a href="#siap_vote" class="text-xl hover:underline transition delay-100">Siap Vote</a>
+						</li>
+						<!-- <li>
+							<details>
+								<summary>Parent</summary>
+								<ul class="p-2">
+									<li><a>Submenu 1</a></li>
+									<li><a>Submenu 2</a></li>
+								</ul>
+							</details>
+						</li> -->
+					</ul>
+				</div>
+			</div>
 			<!-- hero -->
-			<section class="p-12 mb-12 bg-secondary mt-20">
+			<section class="p-12 mb-12 bg-secondary" style="background-image: url('img/decor/large-triangles.svg')">
 				<div class="text-center xl:w-8/12 md:w-full xs:block mx-auto h-screen flex items-center justify-center">
 					<div class="mx-8 my-auto">
-						<h2 class="text-white text-5xl font-bold mb-6">SELAMAT DATANG DI PEMIRA 2024</h2>
+						<h2 class="text-white text-4xl font-bold mb-6 sm:text-5xl">SELAMAT DATANG DI PEMIRA 2024</h2>
 						<p class="text-white text-lg w-sm mb-10 w-lg">
 							PEMIRA merupakan pesta demokrasi tahunan STT Terpadu Nurul Fikri untuk memilih dan
 							menentukan: Presma (Presiden Mahasiswa) - Wapresma (Wakil Presiden Mahasiswa) dan Anggota
@@ -54,69 +143,62 @@
 					</div>
 				</div>
 			</section>
-			<!-- <section class="p-12 mb-12 bg-secondary mt-20">
-				<div class="flex justify-between xl:w-8/12 md:w-full xs:block mx-auto place-items-center items-center">
-					<div class="mx-8">
-						<img src="img/logo.png" alt="logo" />
-					</div>
-					<div class="mx-8">
-						<h2 class="text-white text-5xl font-bold mb-6">SELAMAT DATANG DI PEMIRA 2024</h2>
-						<p class="text-white text-lg w-sm mb-10 w-lg">
-							PEMIRA merupakan pesta demokrasi tahunan STT Terpadu Nurul Fikri untuk memilih dan
-							menentukan: Presma (Presiden Mahasiswa) - Wapresma (Wakil Presiden Mahasiswa) dan Anggota
-							DPM (Dewan Perwakilan Mahasiswa).
-						</p>
-						<a href="" class="bg-white text-secondary p-5 rounded-lg"> Lihat Kandidat </a>
-					</div>
-				</div>
-			</section> -->
+
 			<!-- langkah voting -->
-			<section class="m-7">
+			<section class="my-12" id="langkah">
+				<div class="mb-12">
+					<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Langkah Voting</h2>
+					<hr class="border-b-4 border-secondary max-w-40 mx-auto mt-4" />
+				</div>
 				<div>
-					<div class="mb-12">
-						<h2 class="text-secondary text-4xl font-bold text-center">Langkah-langkah Voting</h2>
-						<hr class="border-b-4 border-secondary max-w-40 mx-auto mt-4" />
-					</div>
-					<div class="text-center grid-cols-3 grid items-end">
-						<div class="mx-auto">
-							<img src="img/illustration/register.svg" alt="" width="280" />
+					<div class="text-center md:grid-cols-3 md:grid items-end block">
+						<div class="">
+							<img src="img/illustration/register.svg" alt="" class="mx-auto" width="280" />
+							<h1 class="text-2xl">1. Registrasi</h1>
 						</div>
-						<div class="mx-auto">
-							<img src="img/illustration/login.svg" alt="" width="280" />
+						<div class="">
+							<img src="img/illustration/login.svg" alt="" class="mx-auto" width="280" />
+							<h1 class="text-2xl">2. Login</h1>
 						</div>
-						<div class="mx-auto">
-							<img src="img/illustration/vote.svg" alt="" width="280" />
+						<div class="">
+							<img src="img/illustration/vote.svg" alt="" class="mx-auto" width="280" />
+							<h1 class="text-2xl">3. Voting</h1>
 						</div>
 					</div>
 					<div class="text-center flex self-center items-center my-4">
-						<div class="mx-auto">
-							<h1 class="text-2xl">Registrasi</h1>
-						</div>
-						<div class="mx-auto">
-							<h1 class="text-2xl">Login</h1>
-						</div>
-						<div class="mx-auto">
-							<h1 class="text-2xl">Voting</h1>
-						</div>
+						<div class="mx-auto"></div>
+						<div class="mx-auto"></div>
+						<div class="mx-auto"></div>
 					</div>
 				</div>
 			</section>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+				></path>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+				></path>
+			</svg>
+
 			<!-- Calon Kandidat -->
-			<section class="m-7">
-				<h2 class="text-secondary text-4xl font-bold my-12 text-center">Calon Kandidat</h2>
-				<h2 class="text-secondary text-3xl font-bold mb-6 text-center">Presma dan Wapresma</h2>
+			<section class="my-12" id="kandidat">
+				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Calon Kandidat</h2>
+				<hr class="border-b-4 border-secondary max-w-40 mx-auto mt-4" />
+				<h2 class="text-secondary text-2xl mb-6 mt-8 text-center">Presma dan Wapresma</h2>
+
 				<div class="text-center bg-background w-fit mx-auto p-4 rounded-xl shadow-lg pb-8">
 					<h1 class="my-1 text-3xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl">
 						01
 					</h1>
 					<div class="flex mb-6 justify-center">
 						<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-							<!-- <a href="#"> -->
-							<!-- <h1
-                                    class="rounded-full bg-secondary text-2xl max-w-fit text-background p-2 mb-3 mx-auto font-bold"
-                                >
-                                    1
-                                </h1> -->
 							<img src="img/candidate/paslon1.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
 							<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
 							<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1>
@@ -129,14 +211,11 @@
 											✕
 										</button>
 									</form>
-									<h3 class="font-bold text-lg mb-4">Apakah Kamu sudah yakin ?</h3>
+									<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
 									<p class="py-4">Visi</p>
 									<p class="pb-4">Menjadikan lorem</p>
 									<p class="py-4">Misi</p>
 									<p class="pb-4">Menjadikan lorem</p>
-									<div class="modal-action">
-										<a class="btn bg-green-500 text-secondary" href="login.html">Ya, Vote !</a>
-									</div>
 								</div>
 							</dialog>
 							<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
@@ -150,24 +229,70 @@
 							<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
 						</div>
 					</div>
-					<a href="#" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()"
-						>Visi dan Misi</a
-					>
+					<button type="button" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()">
+						Visi dan Misi
+					</button>
 				</div>
 			</section>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+				></path>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+				></path>
+			</svg>
+
 			<!-- Live Count -->
-			<section>
-				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Live Count</h2>
+			<section class="my-12" id="live_count">
+				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Live Count</h2>
+				<hr class="border-b-4 border-secondary max-w-32 mx-auto mt-4" />
+				<div class="w-80 block mx-auto justify-center my-12 md:flex">
+					<div class="mx-12">
+						<h2 class="text-center text-secondary font-bold text-xl">BEM</h2>
+						<canvas id="presma"></canvas>
+					</div>
+					<div class="mx-12">
+						<h2 class="text-center text-secondary font-bold text-xl">Himti</h2>
+						<canvas id="himti"></canvas>
+					</div>
+					<div class="mx-12">
+						<h2 class="text-center text-secondary font-bold text-xl">Himsi</h2>
+						<canvas id="himsi"></canvas>
+					</div>
+				</div>
 			</section>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+				></path>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+				></path>
+			</svg>
+
 			<!-- syarat dan ketentuan -->
-			<section>
-				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Syarat dan Ketentuan</h2>
-				<!-- <div class="mx-auto mb-4">
+			<section class="my-12">
+				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Syarat dan Ketentuan</h2>
+				<hr class="border-b-4 border-secondary max-w-32 mx-auto mt-4" />
+				<div class="mx-auto mb-4 mt-12">
 					<div class="row flex">
-						<div class="col-xl-6">
+						<div class="col-xl-6 block">
 							<img src="img/illustration/vote.svg" alt="" width="320" />
 						</div>
-						<div class="col-xl-6">
+						<div class="col-xl-6 block">
 							<p>
 								1. "Cahaya Cantik yang Mencerahkan: Produk Kecantikan Halal untuk Wanita Berkarakter"<br />
 								2. "Pesona Muslimah: Temukan Keanggunanmu dengan Produk Kecantikan Berbahan Alami"
@@ -178,45 +303,147 @@
 							</p>
 						</div>
 					</div>
-				</div> -->
+				</div>
 			</section>
-			<!-- contact -->
-			<!-- <section>
-				<h2 class="text-secondary text-4xl font-bold mb-12 text-center">Hubungi Kami</h2>
-				<div class="text-center grid gap-3 grid-cols-3 mb-6">
-					<div class="mx-auto">
-						<h1 class="text-2xl text-secondary">
-							<i class="fab fa-instagram"></i><a href=""> kprsttnf</a>
-						</h1>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+				></path>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#363062"
+					fill-opacity="1"
+					d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,165.3C1120,160,1280,192,1360,208L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+				></path>
+			</svg>
+
+			<!-- Siap Vote -->
+			<section class="my-12" id="siap_vote">
+				<div class="text-center flex justify-center items-center">
+					<div>
+						<h2 class="text-secondary text-3xl font-bold text-center mx-6">Sudah Siap ?</h2>
 					</div>
-					<div class="mx-auto">
-						<h1 class="text-2xl text-secondary">
-							<i class="fas fa-envelope"></i> <a href="">kprsttnf@gmail.com</a>
-						</h1>
-					</div>
-					<div class="mx-auto">
-						<h1 class="text-2xl text-secondary">
-							<i class="fab fa-whatsapp"></i> <a href="">+6283197034192</a>
-						</h1>
+					<div>
+						<a
+							href="#"
+							class="text-xl bg-secondary text-white hover:bg-indigo-800 transition delay-100 p-4 rounded-lg"
+							>Vote Sekarang</a
+						>
 					</div>
 				</div>
-			</section> -->
+			</section>
+
 			<!-- footer -->
-			<footer class="mb-8 b-0">
+			<footer class="mt-12 py-6 b-0 bg-secondary">
 				<!-- <hr class="border-t-1 border-secondary" /> -->
-				<h2 class="mt-6 text-center text-secondary">
-					Created with <i class="fas fa-heart text-red-400"></i> + <i class="fas fa-coffee"></i> by
-					<a href="" class="underline"> Web Dev KPR 2024</a>
-				</h2>
+				<div class="sm:flex sm:justify-between sm:px-12 block">
+					<h2 class="mt-6 text-center text-white ml-12 text-white">
+						Created with <i class="fas fa-heart text-red-400"></i> + <i class="fas fa-coffee"></i> by
+						<a href="" class="underline"> Web Dev KPR 2024</a>
+					</h2>
+					<h2 class="mt-6 text-center text-white mr-12 font-bold">
+                        <a href="https://www.instagram.com/kprsttnf/" class="mx-4"><i class="fab fa-instagram fa-2x"></i> </a> 
+                        <a href="mailto:kprsttnf@gmail.com" class="mx-4"><i class="fas fa-envelope fa-2x"></i> </a>
+                        <a href="" class="mx-4"><i class="fab fa-whatsapp fa-2x"></i> </a>
+					</h2>
+					<h2 class="mt-6 text-center text-white mr-12 font-bold"><a href="" class="underline text-white">See our tech stack </a>
+						 </i>
+					</h2>
+				</div>
 			</footer>
 			<a href="https://wa.me/6283197034192" target="_blank" rel="noreferrer noopener">
 				<div
-					class="flex items-center bg-green-500 w-fit p-4 rounded-full fixed z-20 right-8 bottom-8 transition ease-in-out delay-100 hover:scale-110"
+					class="flex items-center bg-green-500 w-fit p-4 rounded-full fixed z-20 right-8 bottom-12 transition ease-in-out delay-100 hover:scale-110"
 				>
 					<img src="img/brands/whatsapp-white.svg" class="w-10" alt="" />
 					<!-- <p class="text-xl text-white font-bold ml-3">Hubungi Kami</p> -->
 				</div>
 			</a>
 		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+			integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="js/tailwind.config.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+			const presma = document.getElementById('presma');
+			const himti = document.getElementById('himti');
+			const himsi = document.getElementById('himsi');
+			// presma
+			new Chart(presma, {
+				type: 'pie',
+				data: {
+					labels: ['Red', 'Blue'],
+					datasets: [
+						{
+							label: '# of Votes',
+							data: [12, 19],
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					Responsive: true,
+					scales: {
+						y: {
+							beginAtZero: true,
+						},
+					},
+				},
+			});
+			// himsi
+			new Chart(himsi, {
+				type: 'pie',
+				data: {
+					labels: ['Red', 'Blue'],
+					datasets: [
+						{
+							label: '# of Votes',
+							data: [12, 19],
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					Responsive: true,
+					scales: {
+						y: {
+							beginAtZero: true,
+						},
+					},
+				},
+			});
+			// himti
+			new Chart(himti, {
+				type: 'pie',
+				data: {
+					labels: ['Red', 'Blue'],
+					datasets: [
+						{
+							label: '# of Votes',
+							data: [12, 19],
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					Responsive: true,
+					scales: {
+						y: {
+							beginAtZero: true,
+						},
+					},
+				},
+			});
+		</script>
 	</body>
 </html>
