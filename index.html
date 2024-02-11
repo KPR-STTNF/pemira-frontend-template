@@ -14,10 +14,50 @@
 		<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<style>
+			#preload-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 9999;
+				opacity: 1;
+				transition: opacity 0.5s ease-out; /* Add a fade-out transition */
+			}
+
+			.loader {
+				border: 8px solid #ffffff;
+				border-top: 8px solid #425485;
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				animation: spin 1s linear infinite;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			.fade-out {
+				opacity: 0 !important;
+			}
+		</style>
 	</head>
 	<body style="background-image: url('/img/decor/large-triangles-white.svg')">
 		<html data-theme="cupcake"></html>
-		<div data-aos="fade-down"></div>
+		<div id="preload-container">
+			<div class="loader"></div>
+			<!-- <h1 class="text-2xl font-bold ml-2 text-secondary">Tunggu yak</h1> -->
+		</div>
 		<div class="container-full">
 			<!-- navbar -->
 			<!-- <nav class="fixed top-0 w-full bg-white shadow-md">
@@ -47,10 +87,52 @@
 					</div>
 				</div>
 			</nav> -->
-			<div class="navbar bg-base-100 fixed top-0 w-full z-20">
+			<div class="navbar bg-base-100 sticky top-0 w-full z-20">
 				<div class="navbar-start ml-1/2">
-					<img src="img/logo.png" alt="" class="w-20" />
+					<a href="#hero">
+						<img src="img/logo.png" alt="" class="w-20" />
+						<!-- <h2 class="text-2xl font-bold text-secondary">#yukVote</h2> -->
+					</a>
+				</div>
+				<div class="navbar-end">
 					<div class="dropdown">
+						<ul
+							tabindex="0"
+							class="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56 right-0"
+						>
+							<li class="h-full">
+								<a href="#hero" class="text-xl text-secondary hover:underline transition delay-100"
+									>Welcome</a
+								>
+							</li>
+							<li class="h-full">
+								<a href="#tutorial" class="text-xl text-secondary hover:underline transition delay-100"
+									>Tutorial</a
+								>
+							</li>
+							<li class="h-full">
+								<a href="#kandidat" class="text-xl text-secondary hover:underline transition delay-100"
+									>Kandidat</a
+								>
+							</li>
+							<li class="h-full">
+								<a
+									href="#live_count"
+									class="text-xl text-secondary hover:underline transition delay-100"
+									>Live Count</a
+								>
+							</li>
+							<li class="h-full">
+								<a href="#sk" class="text-xl text-secondary hover:underline transition delay-100"
+									>Ketentuan</a
+								>
+							</li>
+							<li class="h-full">
+								<a href="#siap_vote" class="text-xl text-secondary hover:underline transition delay-100"
+									>Siap Vote</a
+								>
+							</li>
+						</ul>
 						<div tabindex="0" role="button" class="btn btn-ghost lg:hidden align-end">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -67,17 +149,16 @@
 								/>
 							</svg>
 						</div>
-						<ul
-							tabindex="0"
-							class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-						>
+					</div>
+					<div class="hidden lg:flex items-center w-3/4">
+						<ul class="menu menu-horizontal px-1">
 							<li class="h-full">
 								<a href="#hero" class="text-xl text-secondary hover:underline transition delay-100"
 									>Welcome</a
 								>
 							</li>
 							<li class="h-full">
-								<a href="#langkah" class="text-xl text-secondary hover:underline transition delay-100"
+								<a href="#tutorial" class="text-xl text-secondary hover:underline transition delay-100"
 									>Tutorial</a
 								>
 							</li>
@@ -106,40 +187,6 @@
 						</ul>
 					</div>
 				</div>
-				<div class="navbar-end hidden lg:flex items-center w-3/4">
-					<ul class="menu menu-horizontal px-1">
-						<li class="h-full">
-							<a href="#hero" class="text-xl text-secondary hover:underline transition delay-100"
-								>Welcome</a
-							>
-						</li>
-						<li class="h-full">
-							<a href="#langkah" class="text-xl text-secondary hover:underline transition delay-100"
-								>Tutorial</a
-							>
-						</li>
-						<li class="h-full">
-							<a href="#kandidat" class="text-xl text-secondary hover:underline transition delay-100"
-								>Kandidat</a
-							>
-						</li>
-						<li class="h-full">
-							<a href="#live_count" class="text-xl text-secondary hover:underline transition delay-100"
-								>Live Count</a
-							>
-						</li>
-						<li class="h-full">
-							<a href="#sk" class="text-xl text-secondary hover:underline transition delay-100"
-								>Ketentuan</a
-							>
-						</li>
-						<li class="h-full">
-							<a href="#siap_vote" class="text-xl text-secondary hover:underline transition delay-100"
-								>Siap Vote</a
-							>
-						</li>
-					</ul>
-				</div>
 			</div>
 
 			<!-- hero -->
@@ -152,7 +199,7 @@
 							menentukan Anggota DPM, Presma (Presiden Mahasiswa) - Wapresma ( Wakil Presiden Mahasiswa)
 							dan Ketua - Wakil Ketua HIMA
 						</p>
-						<a href="#langkah" class="bg-white text-secondary p-5 rounded-lg">
+						<a href="#tutorial" class="bg-white text-secondary p-5 rounded-lg">
 							Mulai Jelajah <i class="fas fa-arrow-down"></i>
 						</a>
 					</div>
@@ -166,14 +213,31 @@
 				></path>
 			</svg>
 
-			<!-- langkah voting -->
-			<section class="my-12" id="langkah">
+			<!-- tutorial voting -->
+			<section class="my-12" id="tutorial">
 				<div class="mb-12">
-					<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Langkah Voting</h2>
+					<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Tutorial Voting</h2>
 					<hr class="border-b-4 border-secondary max-w-40 mx-auto mt-4" />
 				</div>
-				<div>
-					<div class="text-center md:grid-cols-3 md:grid items-end block">
+				<div class="mx-auto">
+					><iframe
+						class="mx-auto sm:w-8/12 w-96"
+						height="640"
+						src="https://www.youtube-nocookie.com/embed/mUzI86asVEY?si=RudYRKvkf7sLN7vK"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					></iframe>
+					<div class="text-center">
+						<a href="" target="_blank">
+							<h2 class="mt-4 font-bold bg-secondary w-fit p-3 text-center text-white mx-auto rounded">
+								<i class="fab fa-youtube"></i>
+								Tonton di Youtube
+							</h2>
+						</a>
+					</div>
+					<!-- <div class="text-center md:grid-cols-3 md:grid items-end block">
 						<div class="">
 							<img src="img/illustration/register.svg" alt="" class="mx-auto" width="280" />
 							<h1 class="text-2xl">1. Registrasi</h1>
@@ -191,7 +255,7 @@
 						<div class="mx-auto"></div>
 						<div class="mx-auto"></div>
 						<div class="mx-auto"></div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -214,126 +278,189 @@
 				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center mt-8">Calon Kandidat</h2>
 				<hr class="border-b-4 border-secondary max-w-40 mx-auto mt-4 mb-10" />
 				<!-- <h2 class="text-secondary text-2xl mb-6 mt-8 text-center">Presma dan Wapresma</h2> -->
-				<div class="sm:flex block">
-					<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
-						<h1 class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl">
-							BEM
-						</h1>
-						<div class="flex mb-6 justify-center">
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<img src="img/candidate/paslon1.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
-								<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- modal -->
-								<dialog id="my_modal_3" class="modal">
-									<div class="modal-box">
-										<form method="dialog">
-											<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-												✕
-											</button>
-										</form>
-										<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
-										<p class="py-4">Visi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-										<p class="py-4">Misi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-									</div>
-								</dialog>
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+				<div class="">
+					<div class="sm:flex block justify-center">
+						<!-- bem -->
+						<!-- <div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
+							<h1
+								class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl"
+							>
+								HMPSSI
+							</h1>
+							<div class="flex mb-6 justify-center">
+								<div
+									class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105"
+								>
+									<img
+										src="img/candidate/paslon1.jpg"
+										alt=""
+										class="w-full sm:w-72"
+										class="mx-auto"
+									/>
+									<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
+									<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1> 
+									<dialog id="my_modal_3" class="modal">
+										<div class="modal-box">
+											<form method="dialog">
+												<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+													✕
+												</button>
+											</form>
+											<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
+											<p class="py-4">Visi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+											<p class="py-4">Misi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+										</div>
+									</dialog> 
+								</div>
+								<div
+									class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105"
+								> 
+									<img
+										src="img/candidate/paslon2.jpg"
+										alt=""
+										class="w-full sm:w-72"
+										class="mx-auto"
+									/>
+									<h1 class="mt-6 mb-1 text-3xl text-secondary">Ubay</h1>
+									<h1 class="text-lg text-secondary">(Calon Wakil Presiden Mahasiswa)</h1> 
+								</div>
 							</div>
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<!-- <a href=""> -->
-								<img src="img/candidate/paslon2.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Ubay</h1>
-								<h1 class="text-lg text-secondary">(Calon Wakil Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+							<button
+								type="button"
+								class="bg-main text-white p-3 rounded"
+								onclick="my_modal_3.showModal()"
+							>
+								Visi dan Misi
+							</button>
+						</div> -->
+						<!-- bem -->
+						<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
+							<h1
+								class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl"
+							>
+								BEM
+							</h1>
+							<div class="flex mb-2 justify-center">
+								<div
+									class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105"
+								>
+									<img
+										src="img/candidate/paslon1.jpg"
+										alt=""
+										class="w-full sm:w-72"
+										class="mx-auto"
+									/>
+									<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh & Ubay</h1>
+									<dialog id="my_modal_3" class="modal">
+										<div class="modal-box">
+											<form method="dialog">
+												<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+													✕
+												</button>
+											</form>
+											<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
+											<p class="py-4">Visi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+											<p class="py-4">Misi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+										</div>
+									</dialog>
+								</div>
 							</div>
+							<button
+								type="button"
+								class="bg-main text-white p-3 rounded"
+								onclick="my_modal_3.showModal()"
+							>
+								Visi dan Misi
+							</button>
 						</div>
-						<button type="button" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()">
-							Visi dan Misi
-						</button>
-					</div>
-					<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
-						<h1 class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl">
-							HMPSSI
-						</h1>
-						<div class="flex mb-6 justify-center">
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<img src="img/candidate/paslon1.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
-								<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- modal -->
-								<dialog id="my_modal_3" class="modal">
-									<div class="modal-box">
-										<form method="dialog">
-											<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-												✕
-											</button>
-										</form>
-										<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
-										<p class="py-4">Visi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-										<p class="py-4">Misi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-									</div>
-								</dialog>
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+						<!-- hmpssi -->
+						<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
+							<h1
+								class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl"
+							>
+								HMPSSI
+							</h1>
+							<div class="flex mb-2 justify-center">
+								<div
+									class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105"
+								>
+									<img
+										src="img/candidate/paslon1.jpg"
+										alt=""
+										class="w-full sm:w-72"
+										class="mx-auto"
+									/>
+									<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
+									<dialog id="my_modal_3" class="modal">
+										<div class="modal-box">
+											<form method="dialog">
+												<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+													✕
+												</button>
+											</form>
+											<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
+											<p class="py-4">Visi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+											<p class="py-4">Misi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+										</div>
+									</dialog>
+								</div>
 							</div>
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<!-- <a href=""> -->
-								<img src="img/candidate/paslon2.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Ubay</h1>
-								<h1 class="text-lg text-secondary">(Calon Wakil Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
-							</div>
+							<button
+								type="button"
+								class="bg-main text-white p-3 rounded"
+								onclick="my_modal_3.showModal()"
+							>
+								Visi dan Misi
+							</button>
 						</div>
-						<button type="button" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()">
-							Visi dan Misi
-						</button>
-					</div>
-					<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
-						<h1 class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl">
-							HMPSTI
-						</h1>
-						<div class="flex mb-6 justify-center">
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<img src="img/candidate/paslon1.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
-								<h1 class="text-lg text-secondary">(Calon Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- modal -->
-								<dialog id="my_modal_3" class="modal">
-									<div class="modal-box">
-										<form method="dialog">
-											<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-												✕
-											</button>
-										</form>
-										<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
-										<p class="py-4">Visi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-										<p class="py-4">Misi</p>
-										<p class="pb-4">Menjadikan lorem</p>
-									</div>
-								</dialog>
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
+						<!-- hmpsti -->
+						<div class="text-center bg-background w-fit mx-4 p-4 rounded-xl shadow-lg pb-8 mb-4">
+							<h1
+								class="my-1 text-2xl text-background font-bold bg-secondary w-fit mx-auto p-2 rounded-xl"
+							>
+								HMPSTI
+							</h1>
+							<div class="flex mb-2 justify-center">
+								<div
+									class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105"
+								>
+									<img
+										src="img/candidate/paslon1.jpg"
+										alt=""
+										class="w-full sm:w-72"
+										class="mx-auto"
+									/>
+									<h1 class="mt-6 mb-1 text-3xl text-secondary">Fateh</h1>
+									<dialog id="my_modal_3" class="modal">
+										<div class="modal-box">
+											<form method="dialog">
+												<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+													✕
+												</button>
+											</form>
+											<h3 class="font-bold text-lg mb-4">Cek Visi & Misi beliau</h3>
+											<p class="py-4">Visi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+											<p class="py-4">Misi</p>
+											<p class="pb-4">Menjadikan lorem</p>
+										</div>
+									</dialog>
+								</div>
 							</div>
-							<div class="rounded-xl p-6 text-center transition ease-in-out delay-100 hover:scale-105">
-								<!-- <a href=""> -->
-								<img src="img/candidate/paslon2.jpg" alt="" class="w-full sm:w-72" class="mx-auto" />
-								<h1 class="mt-6 mb-1 text-3xl text-secondary">Ubay</h1>
-								<h1 class="text-lg text-secondary">(Calon Wakil Presiden Mahasiswa)</h1>
-								<!-- </a> -->
-								<!-- <a href="#" class="bg-secondary text-white p-3 rounded-lg">Visi & Misi</a> -->
-							</div>
+							<button
+								type="button"
+								class="bg-main text-white p-3 rounded"
+								onclick="my_modal_3.showModal()"
+							>
+								Visi dan Misi
+							</button>
 						</div>
-						<button type="button" class="bg-main text-white p-3 rounded" onclick="my_modal_3.showModal()">
-							Visi dan Misi
-						</button>
 					</div>
 				</div>
 			</section>
@@ -356,7 +483,6 @@
 			<section class="my-12" id="live_count">
 				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Live Count</h2>
 				<hr class="border-b-4 border-secondary max-w-32 mx-auto mt-4" />
-				<h2 class="text-secondary text-2xl mb-6 mt-8 text-center">*Realtime tanpa perlu refresh halaman</h2>
 				<div class="w-85 block mx-auto justify-center my-12 md:flex">
 					<div class="mx-12 mb-6">
 						<h2 class="text-center text-secondary font-bold text-xl">BEM</h2>
@@ -371,6 +497,7 @@
 						<canvas id="himsi"></canvas>
 					</div>
 				</div>
+				<h2 class="text-secondary text-2xl mb-6 mt-8 text-center">*Realtime tanpa perlu refresh halaman</h2>
 			</section>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 				<path
@@ -565,6 +692,21 @@
 						legend: { position: 'bottom' },
 					},
 				},
+			});
+			document.addEventListener('DOMContentLoaded', function () {
+				// Simulate content loading delay (replace this with your actual content loading logic)
+				setTimeout(function () {
+					var preloadContainer = document.getElementById('preload-container');
+
+					// Add a class to trigger the fade-out effect
+					preloadContainer.classList.add('fade-out');
+
+					// After the fade-out animation completes, hide the preload container and show the main content
+					preloadContainer.addEventListener('transitionend', function () {
+						preloadContainer.style.display = 'none';
+						document.getElementById('main-content').style.display = 'block';
+					});
+				}, 2000); // Adjust the delay time as needed
 			});
 		</script>
 	</body>
