@@ -13,7 +13,6 @@
 		<title>#yukVote | Pemilihan Raya STTNF 2024</title>
 		<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<style>
 			#preload-container {
 				position: fixed;
@@ -481,7 +480,7 @@
 
 			<!-- Live Count -->
 			<section class="my-12" id="live_count">
-				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Live Count</h2>
+				<h2 class="text-secondary text-3xl sm:text-4xl font-bold text-center">Realtime Live Count</h2>
 				<hr class="border-b-4 border-secondary max-w-32 mx-auto mt-4" />
 				<div class="w-85 block mx-auto justify-center my-12 md:flex">
 					<div class="mx-12 mb-6">
@@ -497,7 +496,7 @@
 						<canvas id="himsi"></canvas>
 					</div>
 				</div>
-				<h2 class="text-secondary text-2xl mb-6 mt-8 text-center">*Realtime tanpa perlu refresh halaman</h2>
+				<!-- <h2 class="text-secondary text-2xl mb-6 mt-8 text-center">*Realtime tanpa perlu refresh halaman</h2> -->
 			</section>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 				<path
@@ -566,7 +565,7 @@
 			<section class="my-12" id="siap_vote">
 				<div class="text-center sm:flex justify-center items-center block">
 					<div class="mt-10">
-						<h2 class="text-secondary text-3xl font-bold text-center mx-6">Sudah Siap ?</h2>
+						<h2 class="text-secondary text-3xl font-bold text-center mx-5">Sudah Menentukan Pilihan ?</h2>
 					</div>
 					<div class="mt-10">
 						<a
@@ -576,6 +575,9 @@
 						>
 					</div>
 				</div>
+				<p class="text-center mt-7 text-secondary">
+					Sebelum mulai, pastikan kamu sudah memahami Syarat dan Ketentuan kami ya :)
+				</p>
 			</section>
 
 			<!-- footer -->
@@ -589,11 +591,11 @@
 			<footer class="py-6 b-0 bg-secondary">
 				<!-- <hr class="border-t-1 border-secondary" /> -->
 				<div class="sm:flex sm:justify-between sm:px-12 block">
-					<h2 class="mt-6 text-center text-white ml-12 text-white">
+					<h2 class="mt-6 text-center text-white sm:ml-12 text-white">
 						Created with <i class="fas fa-heart text-red-400"></i> + <i class="fas fa-coffee"></i> by
 						<a href="" class="underline" target="_blank"> Web Dev KPR 2024</a>
 					</h2>
-					<h2 class="mt-6 text-center text-white mr-12 font-bold">
+					<h2 class="mt-6 text-center text-white sm:mr-12 font-bold">
 						<a href="https://www.instagram.com/kprsttnf/" class="mx-4" target="_blank"
 							><i class="fab fa-instagram fa-2x"></i>
 						</a>
@@ -604,8 +606,10 @@
 							><i class="fab fa-whatsapp fa-2x" target="_blank"></i>
 						</a>
 					</h2>
-					<h2 class="mt-6 text-center text-white mr-12 font-bold">
-						<a href="" class="underline text-white" target="_blank">See our tech stack </a>
+					<h2 class="mt-6 text-center text-white sm:mr-12 font-bold">
+						<a href="" class="underline text-secondary p-2 rounded bg-white" target="_blank"
+							>See our tech stack
+						</a>
 					</h2>
 				</div>
 			</footer>
@@ -627,9 +631,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="js/tailwind.config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
-			AOS.init();
 			const presma = document.getElementById('presma');
 			const himti = document.getElementById('himti');
 			const himsi = document.getElementById('himsi');
